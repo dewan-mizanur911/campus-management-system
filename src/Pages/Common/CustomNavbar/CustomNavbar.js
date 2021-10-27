@@ -1,8 +1,10 @@
 import React from 'react';
 import { Container, Nav, Navbar, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 
 const CustomNavbar = () => {
+  const { user, logOut } = useAuth();
     return (
       <Navbar bg="dark" variant="dark" expand="lg">
         <Container fluid>
@@ -10,7 +12,7 @@ const CustomNavbar = () => {
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
-              className="ms-auto my-2 my-lg-0"
+              className="ms-auto my-2 my-lg-0 d-flex justify-content-center align-items-center"
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
@@ -26,8 +28,28 @@ const CustomNavbar = () => {
               <Nav.Link as={Link} to="/home">
                 Blog
               </Nav.Link>
-              <Button variant="primary">Register</Button>
-              <Button variant="danger" className="mx-2">Admin</Button>
+              {user.email ? (
+                <Navbar.Brand className="d-flex justify-content-center align-items-center">
+                  <img
+                    src={user.photoURL}
+                    width="30"
+                    height="30"
+                    className="d-inline-block align-top rounded-circle me-2"
+                    alt=""
+                  />
+                  <Button onClick={logOut} variant="danger">
+                    Log Out
+                  </Button>
+                </Navbar.Brand>
+              ) : (
+                <Button as={Link} to="/login" variant="danger">
+                  Login
+                </Button>
+              )}
+
+              <Button as={Link} to="/admin" variant="primary" className="mx-2">
+                Admin
+              </Button>
             </Nav>
           </Navbar.Collapse>
         </Container>

@@ -1,10 +1,10 @@
 import React from 'react';
-import CustomNavbar from '../CustomNavbar/CustomNavbar';
+import Services from '../Services/Services';
 
 const Home = () => {
     return (
         <div>
-            <CustomNavbar></CustomNavbar>
+            <Services></Services>
         </div>
     );
 };
