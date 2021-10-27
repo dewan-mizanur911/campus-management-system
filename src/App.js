@@ -7,7 +7,8 @@ import Login from "./Pages/Login/Login";
 import CustomNavbar from "./Pages/Common/CustomNavbar/CustomNavbar";
 import AuthProvider from "./Context/AuthProvider";
 import AddService from "./Pages/AddService/AddService";
-import AddededService from "./Pages/AddededService/AddededService";
+import AddededService from "./Pages/AddedService/AddededService/AddededService";
+import PrivateRoute from "./Pages/PrivateRoute/PrivateRoute";
 
 function App() {
   return <div className="App">
@@ -24,11 +25,11 @@ function App() {
         <Route path="/login">
           <Login></Login>
           </Route>
-          <Route path="/service/:id">
+          <PrivateRoute path="/service/:id">
             <AddService></AddService>
-          </Route>
+          </PrivateRoute>
           <Route path="/addededService">
-            <AddededService></AddededService>
+              <AddededService></AddededService>
           </Route>
       </Switch>
     </Router>

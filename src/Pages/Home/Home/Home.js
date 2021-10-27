@@ -6,12 +6,12 @@ const Home = () => {
         const [services, setServices] = useState({});
         useEffect(() => {
           // fetch("https://campus-management-server.herokuapp.com/services")
-          fetch("http://localhost:5000/services")
+          fetch("https://campus-management-server.herokuapp.com/services")
             .then((res) => res.json())
-              .then((data) => {
-                  setServices(data);
-                   setSearched(data);
-              });
+            .then((data) => {
+              setServices(data);
+              setSearched(data);
+            });
         }, []);
     const [searched, setSearched] = useState([]);
         const handleOnSearch = (e) => {
