@@ -7,10 +7,12 @@ import {
   signOut
 } from "firebase/auth";
 import { useState } from "react";
+import useSelectedServices from "./selectedService";
 
 initializeAuthentication();
 
 const useFirebase = () => {
+  const { useService } = useSelectedServices();
     const [user, setUser] = useState({});
     const [error, setError] = useState('');
     const auth = getAuth();
@@ -41,7 +43,7 @@ const useFirebase = () => {
       }
     });
 
-    return {user, error, signInWithGoogle, logOut}
+    return {user, error, signInWithGoogle, logOut, useService}
 }
 
 export default useFirebase;

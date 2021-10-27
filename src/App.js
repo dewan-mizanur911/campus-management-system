@@ -6,6 +6,8 @@ import Home from "./Pages/Home/Home/Home";
 import Login from "./Pages/Login/Login";
 import CustomNavbar from "./Pages/Common/CustomNavbar/CustomNavbar";
 import AuthProvider from "./Context/AuthProvider";
+import AddService from "./Pages/AddService/AddService";
+import AddededService from "./Pages/AddededService/AddededService";
 
 function App() {
   return <div className="App">
@@ -21,7 +23,13 @@ function App() {
         </Route>
         <Route path="/login">
           <Login></Login>
-        </Route>
+          </Route>
+          <Route path="/service/:id">
+            <AddService></AddService>
+          </Route>
+          <Route path="/addededService">
+            <AddededService></AddededService>
+          </Route>
       </Switch>
     </Router>
     </AuthProvider>

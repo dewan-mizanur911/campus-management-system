@@ -11,11 +11,7 @@ const Service = ({ service }) => {
           <Card.Img variant="top" src={picture} height="230px" />
           <Card.Body className="card-body">
             <Card.Title
-              className={
-                name === "Socail Involvement"
-                  ? "text-dark fs-bold"
-                  : "text-white fs-bold"
-              }
+              className=""
             >
               {name}
             </Card.Title>

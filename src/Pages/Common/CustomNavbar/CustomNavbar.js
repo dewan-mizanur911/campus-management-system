@@ -8,7 +8,7 @@ const CustomNavbar = () => {
     return (
       <Navbar bg="dark" variant="dark" expand="lg">
         <Container fluid>
-          <Navbar.Brand href="#">Campus Management System</Navbar.Brand>
+          <Navbar.Brand as={Link} to="/home">Campus Management System</Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -22,7 +22,7 @@ const CustomNavbar = () => {
               <Nav.Link as={Link} to="/home">
                 Donation
               </Nav.Link>
-              <Nav.Link as={Link} to="/home">
+              <Nav.Link as={Link} to="/addededService">
                 Events
               </Nav.Link>
               <Nav.Link as={Link} to="/home">
