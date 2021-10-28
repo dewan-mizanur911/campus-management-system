@@ -9,6 +9,7 @@ import AuthProvider from "./Context/AuthProvider";
 import AddService from "./Pages/AddService/AddService";
 import AddededService from "./Pages/AddedService/AddededService/AddededService";
 import PrivateRoute from "./Pages/PrivateRoute/PrivateRoute";
+import NotFound from "./Pages/NotFound/NotFound";
 
 function App() {
   return <div className="App">
@@ -28,8 +29,11 @@ function App() {
           <PrivateRoute path="/service/:id">
             <AddService></AddService>
           </PrivateRoute>
-          <Route path="/addededService">
+          <PrivateRoute path="/addededService">
               <AddededService></AddededService>
+          </PrivateRoute>
+          <Route path="*">
+            <NotFound></NotFound>
           </Route>
       </Switch>
     </Router>
