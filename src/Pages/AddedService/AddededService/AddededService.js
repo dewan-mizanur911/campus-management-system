@@ -14,7 +14,7 @@ const AddededService = () => {
     const handleDelete = (id) => {
         const proceed = window.confirm('Are you sure to delete?');
         if (proceed) {
-                    const url = `https://campus-management-server.herokuapp.com/${id}`;
+                    const url = `https://campus-management-server.herokuapp.com/addedServices/${id}`;
         fetch(url, {
             method: "DELETE"
         })

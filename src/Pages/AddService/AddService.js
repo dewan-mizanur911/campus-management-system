@@ -21,6 +21,7 @@ const AddService = () => {
 
   const onSubmit = (data) => {
     fetch("https://campus-management-server.herokuapp.com/addedServices", {
+    // fetch("http://localhost:5000/addedServices", {
       method: "POST",
       headers: {
         "content-type": "application/json",
