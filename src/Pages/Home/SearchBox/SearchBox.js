@@ -5,7 +5,7 @@ const SearchBox = ({handleOnSearch}) => {
     return (
       <div>
         <Form className="mt-2">
-            <h3>Availabe Services For Campus Monitoring and Management</h3>
+            <h3>Services For Campus Monitoring and Management</h3>
           <FormControl
             type="search"
             placeholder="Search"
